@@ -1,0 +1,25 @@
+---
+global:
+  rbacEnable: false
+deployKubeScheduler: false
+deployKubeControllerManager: false
+prometheus:
+  service:
+    type: LoadBalancer
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: prometheus.headless-test.headless.saucelabs.com.
+grafana:
+  service:
+    type: LoadBalancer
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: grafana.headless-test.headless.saucelabs.com.
+  keepOriginalDatasources: false
+  dataSource:
+    prometheus-datasource.json: |-
+      {
+        "access": "proxy",
+        "basicAuth": false,
+        "name": "prometheus",
+        "type": "prometheus",
+        "url": "http://prometheus.headless-test.headless.saucelabs.com"
+      }
