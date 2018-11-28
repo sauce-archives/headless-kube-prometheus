@@ -1,0 +1,1374 @@
+souschef-dashboard.json: |-
+  {
+      "dashboard": {
+          "__inputs": [
+              {
+                  "description": "",
+                  "label": "prometheus",
+                  "name": "DS_PROMETHEUS",
+                  "pluginId": "prometheus",
+                  "pluginName": "Prometheus",
+                  "type": "datasource"
+              }
+          ],
+          "annotations": {
+              "list": []
+          },
+          "editable": true,
+          "gnetId": null,
+          "graphTooltip": 0,
+          "iteration": 1540975052540,
+          "links": [],
+          "panels": [
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 0
+                  },
+                  "id": 12,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:943",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.queued\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "queued",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:1005",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.new\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "new",
+                          "refId": "B"
+                      },
+                      {
+                          "$$hashKey": "object:1027",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.throttled-new\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "throttled-new",
+                          "refId": "C"
+                      },
+                      {
+                          "$$hashKey": "object:1173",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.complete\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "complete",
+                          "refId": "D"
+                      },
+                      {
+                          "$$hashKey": "object:1195",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.throttled-queued\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "throttled-queued",
+                          "refId": "E"
+                      },
+                      {
+                          "$$hashKey": "object:1217",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.error\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "error",
+                          "refId": "F"
+                      },
+                      {
+                          "$$hashKey": "object:1241",
+                          "expr": "sum(sl_souschef_gauges_total{name=~\".*status.in_progress\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "in_progress",
+                          "refId": "G"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Job Status",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1057",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1058",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 0
+                  },
+                  "id": 14,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1299",
+                          "expr": "sum(max_over_time(sl_souschef_chefs_images_starved_total{image=~\"chef.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "Jobs waiting for chefs",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:1495",
+                          "expr": "sum(max_over_time(sl_souschef_chefs_images_starved_total{image=~\"ichef.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "Mac Jobs waitings for ichefs",
+                          "refId": "B"
+                      },
+                      {
+                          "$$hashKey": "object:1519",
+                          "expr": "sum(max_over_time(sl_souschef_chefs_images_starved_total{image=~\"lxchef.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "Jobs waiting fo lxchefs",
+                          "refId": "C"
+                      }
+                  ],
+                  "thresholds": [
+                      {
+                          "$$hashKey": "object:1460",
+                          "colorMode": "ok",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 15,
+                          "yaxis": "left"
+                      }
+                  ],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Job Assignment Time",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1367",
+                          "format": "dtdurations",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1368",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 9
+                  },
+                  "id": 2,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": false,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:130",
+                          "expr": "rate(sl_souschef_blocked_total_seconds_sum[10m])",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "{{app}}",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Blocked",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1114",
+                          "format": "dtdurations",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1115",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 9
+                  },
+                  "id": 10,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:786",
+                          "expr": "rate(sl_souschef_dispatch_new_jobs_seconds_sum[10m])",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "{{app}}",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [
+                      {
+                          "$$hashKey": "object:985",
+                          "colorMode": "warning",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 2,
+                          "yaxis": "left"
+                      },
+                      {
+                          "$$hashKey": "object:991",
+                          "colorMode": "critical",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 6,
+                          "yaxis": "left"
+                      }
+                  ],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Dispatch Loop Time",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:856",
+                          "format": "dtdurations",
+                          "label": null,
+                          "logBase": 1,
+                          "max": "6",
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:857",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 18
+                  },
+                  "id": 6,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:326",
+                          "expr": "sum(rate(sl_souschef_msgs_total{name=~\"resto.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "resto",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:354",
+                          "expr": "sum(rate(sl_souschef_msgs_total{name=~\"plumber.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "plumber",
+                          "refId": "B"
+                      },
+                      {
+                          "$$hashKey": "object:398",
+                          "expr": "sum(rate(sl_souschef_msgs_total{name=~\"chef.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "chef",
+                          "refId": "D"
+                      },
+                      {
+                          "$$hashKey": "object:728",
+                          "expr": "sum(rate(sl_souschef_msgs_total{name=~\"sushiboat.*\"}[1m]))",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "sushiboat",
+                          "refId": "C"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Message Rate",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 18
+                  },
+                  "id": 8,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:581",
+                          "expr": "avg(sl_souschef_jobs_statistics_total_sum{name=\"FileUploads\"}/sl_souschef_jobs_statistics_total_count{name=\"FileUploads\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "FileUploads",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "File Uploads Time",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:456",
+                          "format": "dtdurations",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:457",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 27
+                  },
+                  "id": 22,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:2284",
+                          "expr": "avg(sl_souschef_ramdb_flush_doc_seconds_sum/sl_souschef_ramdb_flush_doc_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "duration",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "RamDB Flusher Time",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:2312",
+                          "format": "dtdurations",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:2313",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 27
+                  },
+                  "id": 16,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1620",
+                          "expr": "rate(sl_souschef_ramdb_flusher_docs_total[10m])",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "{{app}}",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "RamDB Flush Document Rate",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 36
+                  },
+                  "id": 4,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:188",
+                          "expr": "sum(sl_souschef_gauges_total{name=\"jobs.assigned_chef\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "assigned_chef",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Assigned Chef",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1943",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1944",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": true,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 36
+                  },
+                  "id": 18,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": false,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1782",
+                          "expr": "sum(sl_souschef_gauges_total{name=\"jobs.automation_backend.espresso\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "espresso",
+                          "refId": "B"
+                      },
+                      {
+                          "$$hashKey": "object:1804",
+                          "expr": "sum(sl_souschef_gauges_total{name=\"jobs.automation_backend.appium\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "appium",
+                          "refId": "C"
+                      },
+                      {
+                          "$$hashKey": "object:1826",
+                          "expr": "sum(sl_souschef_gauges_total{name=\"jobs.automation_backend.webdriver\"})",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "webdriver",
+                          "refId": "D"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Automation Backend",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 45
+                  },
+                  "id": 20,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:2047",
+                          "expr": "sl_souschef_loops_stale_jobs{state=\"queued\"}",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:2109",
+                          "expr": "sl_souschef_loops_stale_chefs{state=\"queued\"}",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "refId": "B"
+                      }
+                  ],
+                  "thresholds": [
+                      {
+                          "$$hashKey": "object:2204",
+                          "colorMode": "warning",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 50,
+                          "yaxis": "left"
+                      },
+                      {
+                          "$$hashKey": "object:2210",
+                          "colorMode": "critical",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 100,
+                          "yaxis": "left"
+                      }
+                  ],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Unqueued due to stale queued",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:2137",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:2138",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 45
+                  },
+                  "id": 24,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:2400",
+                          "expr": "sl_souschef_loops_stale_jobs{state=\"started\"}",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "jobs",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:2548",
+                          "expr": "sl_souschef_loops_stale_chefs{state=\"started\"}",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "chefs",
+                          "refId": "B"
+                      }
+                  ],
+                  "thresholds": [
+                      {
+                          "$$hashKey": "object:2484",
+                          "colorMode": "critical",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 100,
+                          "yaxis": "left"
+                      },
+                      {
+                          "$$hashKey": "object:2490",
+                          "colorMode": "warning",
+                          "fill": true,
+                          "line": true,
+                          "op": "gt",
+                          "value": 50,
+                          "yaxis": "left"
+                      }
+                  ],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Unqueued due to stale started",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              }
+          ],
+          "refresh": false,
+          "schemaVersion": 16,
+          "style": "dark",
+          "tags": [],
+          "templating": {
+              "list": [
+                  {
+                      "auto": true,
+                      "auto_count": 30,
+                      "auto_min": "10s",
+                      "current": {
+                          "text": "auto",
+                          "value": "$__auto_interval_Interval"
+                      },
+                      "hide": 0,
+                      "label": null,
+                      "name": "Interval",
+                      "options": [
+                          {
+                              "selected": true,
+                              "text": "auto",
+                              "value": "$__auto_interval_Interval"
+                          },
+                          {
+                              "selected": false,
+                              "text": "1m",
+                              "value": "1m"
+                          },
+                          {
+                              "selected": false,
+                              "text": "10m",
+                              "value": "10m"
+                          },
+                          {
+                              "selected": false,
+                              "text": "30m",
+                              "value": "30m"
+                          },
+                          {
+                              "selected": false,
+                              "text": "1h",
+                              "value": "1h"
+                          },
+                          {
+                              "selected": false,
+                              "text": "6h",
+                              "value": "6h"
+                          },
+                          {
+                              "selected": false,
+                              "text": "12h",
+                              "value": "12h"
+                          },
+                          {
+                              "selected": false,
+                              "text": "1d",
+                              "value": "1d"
+                          },
+                          {
+                              "selected": false,
+                              "text": "7d",
+                              "value": "7d"
+                          },
+                          {
+                              "selected": false,
+                              "text": "14d",
+                              "value": "14d"
+                          },
+                          {
+                              "selected": false,
+                              "text": "30d",
+                              "value": "30d"
+                          }
+                      ],
+                      "query": "1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+                      "refresh": 2,
+                      "type": "interval"
+                  }
+              ]
+          },
+          "time": {
+              "from": "now-1h",
+              "to": "now"
+          },
+          "timepicker": {
+              "refresh_intervals": [
+                  "5s",
+                  "10s",
+                  "30s",
+                  "1m",
+                  "5m",
+                  "15m",
+                  "30m",
+                  "1h",
+                  "2h",
+                  "1d"
+              ],
+              "time_options": [
+                  "5m",
+                  "15m",
+                  "1h",
+                  "6h",
+                  "12h",
+                  "24h",
+                  "2d",
+                  "7d",
+                  "30d"
+              ]
+          },
+          "timezone": "",
+          "title": "Souschef",
+          "uid": "kUFIoi-mk",
+          "version": 1
+
+      },
+
+      "inputs": [
+          {
+              "name": "DS_PROMETHEUS",
+              "pluginId": "prometheus",
+              "type": "datasource",
+              "value": "prometheus"
+          }
+      ],
+      "overwrite": true
+  }

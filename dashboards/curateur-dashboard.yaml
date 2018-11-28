@@ -1,0 +1,1114 @@
+curateur-dashboard.json: |-
+  {
+      "dashboard": {
+          "__inputs": [
+              {
+                  "description": "",
+                  "label": "prometheus",
+                  "name": "DS_PROMETHEUS",
+                  "pluginId": "prometheus",
+                  "pluginName": "Prometheus",
+                  "type": "datasource"
+              }
+          ],
+          "annotations": {
+              "list": []
+          },
+          "editable": true,
+          "gnetId": null,
+          "graphTooltip": 0,
+          "links": [],
+          "panels": [
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 10,
+                      "w": 24,
+                      "x": 0,
+                      "y": 0
+                  },
+                  "id": 22,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:2254",
+                          "expr": "avg(sl_curateur_flush_seconds_sum/sl_curateur_flush_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "flush",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:2367",
+                          "expr": "avg(sl_curateur_update_builds_seconds_sum/sl_curateur_update_builds_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "update_builds",
+                          "refId": "B"
+                      },
+                      {
+                          "$$hashKey": "object:2389",
+                          "expr": "avg(sl_curateur_trim_seconds_sum/sl_curateur_trim_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "trim",
+                          "refId": "C"
+                      },
+                      {
+                          "$$hashKey": "object:2411",
+                          "expr": "avg(sl_curateur_job_accounting_seconds_sum/sl_curateur_job_accounting_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "job_accounting",
+                          "refId": "D"
+                      },
+                      {
+                          "$$hashKey": "object:2433",
+                          "expr": "avg(sl_curateur_get_job_status_updates_seconds_sum/sl_curateur_get_job_status_updates_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "get_job_status_updates",
+                          "refId": "E"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Timings",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:2293",
+                          "format": "s",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": "0",
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:2294",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 7,
+                      "w": 24,
+                      "x": 0,
+                      "y": 10
+                  },
+                  "id": 20,
+                  "legend": {
+                      "avg": false,
+                      "current": false,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": false
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:2034",
+                          "expr": "sl_souschef_global_jobs_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Build / No Build",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 17
+                  },
+                  "id": 18,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1884",
+                          "expr": "sl_curateur_states_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "states_total",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "States Pulled",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1923",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": "0",
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1924",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 17
+                  },
+                  "id": 16,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1680",
+                          "expr": "sl_curateur_to_flush_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "to_flush",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:1822",
+                          "expr": "sl_curateur_modified_builds_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "modified_builds",
+                          "refId": "B"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Builds to Flush",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1771",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": "0",
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1772",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 26
+                  },
+                  "id": 14,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1622",
+                          "expr": "sl_curateur_build_cache_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Cached Builds",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1532",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": "0",
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1533",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 26
+                  },
+                  "id": 12,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1362",
+                          "expr": "sl_curateur_trimmed_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "trimmed",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:1424",
+                          "expr": "sl_curateur_purged_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "purged",
+                          "refId": "B"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Builds Trimmed",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1475",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": "0",
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1476",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 35
+                  },
+                  "id": 8,
+                  "legend": {
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:979",
+                          "expr": "sl_curateur_bucket_cache_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "bucket_cache",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Bucket Cache",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1049",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1050",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 35
+                  },
+                  "id": 10,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:1209",
+                          "expr": "sl_curateur_bucket_jobs_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "bucket_jobs",
+                          "refId": "A"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Bucket Job Cache",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:1248",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:1249",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 24,
+                      "x": 0,
+                      "y": 44
+                  },
+                  "id": 6,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:724",
+                          "expr": "avg(sl_curateur_find_errors_simple_seconds_sum/sl_curateur_find_errors_simple_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "find_errors_simple_mean",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:895",
+                          "expr": "avg(sl_curateur_persist_errors_simple_seconds_sum/sl_curateur_persist_errors_simple_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "persist_errors_simple_mean",
+                          "refId": "B"
+                      },
+                      {
+                          "$$hashKey": "object:917",
+                          "expr": "avg(sl_curateur_update_score_seconds_sum/sl_curateur_update_score_seconds_count)",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "update_score_mean",
+                          "refId": "C"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Cleanup Loop",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:792",
+                          "format": "s",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": "0",
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:793",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 0,
+                      "y": 53
+                  },
+                  "id": 4,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": true,
+                      "current": true,
+                      "max": false,
+                      "min": false,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:588",
+                          "expr": "sl_curatuer_fixes_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "fixes",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:662",
+                          "expr": "sl_curateur_to_fix_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "to_fix",
+                          "refId": "B"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "Fixed Builds",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              },
+              {
+                  "aliasColors": {},
+                  "bars": false,
+                  "dashLength": 10,
+                  "dashes": false,
+                  "datasource": "${DS_PROMETHEUS}",
+                  "fill": 1,
+                  "gridPos": {
+                      "h": 9,
+                      "w": 12,
+                      "x": 12,
+                      "y": 53
+                  },
+                  "id": 2,
+                  "legend": {
+                      "alignAsTable": true,
+                      "avg": false,
+                      "current": true,
+                      "max": true,
+                      "min": true,
+                      "show": true,
+                      "total": false,
+                      "values": true
+                  },
+                  "lines": true,
+                  "linewidth": 1,
+                  "links": [],
+                  "nullPointMode": "null",
+                  "percentage": false,
+                  "pointradius": 5,
+                  "points": false,
+                  "renderer": "flot",
+                  "seriesOverrides": [],
+                  "spaceLength": 10,
+                  "stack": false,
+                  "steppedLine": false,
+                  "targets": [
+                      {
+                          "$$hashKey": "object:372",
+                          "expr": "sl_curateur_to_check_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "to_check",
+                          "refId": "A"
+                      },
+                      {
+                          "$$hashKey": "object:438",
+                          "expr": "sl_curateur_janitor_queue_total",
+                          "format": "time_series",
+                          "intervalFactor": 1,
+                          "legendFormat": "janitor_queue",
+                          "refId": "B"
+                      }
+                  ],
+                  "thresholds": [],
+                  "timeFrom": null,
+                  "timeShift": null,
+                  "title": "To Check",
+                  "tooltip": {
+                      "shared": true,
+                      "sort": 0,
+                      "value_type": "individual"
+                  },
+                  "type": "graph",
+                  "xaxis": {
+                      "buckets": null,
+                      "mode": "time",
+                      "name": null,
+                      "show": true,
+                      "values": []
+                  },
+                  "yaxes": [
+                      {
+                          "$$hashKey": "object:468",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      },
+                      {
+                          "$$hashKey": "object:469",
+                          "format": "short",
+                          "label": null,
+                          "logBase": 1,
+                          "max": null,
+                          "min": null,
+                          "show": true
+                      }
+                  ],
+                  "yaxis": {
+                      "align": false,
+                      "alignLevel": null
+                  }
+              }
+          ],
+          "schemaVersion": 16,
+          "style": "dark",
+          "tags": [],
+          "templating": {
+              "list": []
+          },
+          "time": {
+              "from": "now-30m",
+              "to": "now"
+          },
+          "timepicker": {
+              "refresh_intervals": [
+                  "5s",
+                  "10s",
+                  "30s",
+                  "1m",
+                  "5m",
+                  "15m",
+                  "30m",
+                  "1h",
+                  "2h",
+                  "1d"
+              ],
+              "time_options": [
+                  "5m",
+                  "15m",
+                  "1h",
+                  "6h",
+                  "12h",
+                  "24h",
+                  "2d",
+                  "7d",
+                  "30d"
+              ]
+          },
+          "timezone": "",
+          "title": "Curateur",
+          "uid": "usU0oEJik",
+          "version": 7
+
+      },
+
+      "inputs": [
+          {
+              "name": "DS_PROMETHEUS",
+              "pluginId": "prometheus",
+              "type": "datasource",
+              "value": "prometheus"
+          }
+      ],
+      "overwrite": true
+  }
