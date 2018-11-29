@@ -1,0 +1,9 @@
+---
+prometheus:
+  service:
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: prometheus.headless-east1.headless.saucelabs.com.
+grafana:
+  service:
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: grafana.headless-east1.headless.saucelabs.com.
