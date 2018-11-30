@@ -1,12 +1,19 @@
 ---
-# prometheus:
-#   service:
-#     annotations:
-#       external-dns.alpha.kubernetes.io/hostname: prometheus.headless-test.headless.saucelabs.com.
-grafana:
-  # service:
-  #   annotations:
-  #     external-dns.alpha.kubernetes.io/hostname: grafana.headless-test.headless.saucelabs.com.
+prometheus:
   ingress:
+    enabled: true
     hosts:
-      - grafana2.headless-test.headless.saucelabs.com
+      - prometheus.headless-test.headless.saucelabs.com
+    tls:
+      - hosts:
+          - prometheus.headless-test.headless.saucelabs.com
+        secretName: sauce-traefik-default-cert
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - grafana.headless-test.headless.saucelabs.com
+    tls:
+      - hosts:
+          - grafana.headless-test.headless.saucelabs.com
+        secretName: sauce-traefik-default-cert
