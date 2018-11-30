@@ -16,3 +16,9 @@ The password can be obtained with:
 ```
 kubectl get secret --namespace monitoring kube-prometheus-grafana -o jsonpath="{.data.password}" | base64 --decode ; echo
 ```
+
+# Prometheus
+Prometheus can be accessed using:
+```
+kubectl port-forward -n monitoring services/kube-prometheus 9090
+```

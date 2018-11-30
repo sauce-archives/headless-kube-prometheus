@@ -1,13 +1,4 @@
 ---
-prometheus:
-  ingress:
-    enabled: true
-    hosts:
-      - prometheus.us-east1.headless.saucelabs.com
-    tls:
-      - hosts:
-          - prometheus.us-east1.headless.saucelabs.com
-        secretName: sauce-traefik-default-cert
 grafana:
   ingress:
     enabled: true

@@ -4,13 +4,6 @@ global:
 deployKubeScheduler: false
 deployKubeControllerManager: false
 prometheus:
-  service:
-    type: NodePort
-  ingress:
-    enabled: true
-    annotations:
-      kubernetes.io/ingress.class: traefik
-      kubernetes.io/tls-acme: "true"
   additionalScrapeConfigs:
     - job_name: "monitoring/kubernetes-pods"
       kubernetes_sd_configs:
@@ -36,8 +29,9 @@ grafana:
   # kubectl get secret --namespace monitoring kube-prometheus-grafana -o jsonpath="{.data.password}" | base64 --decode ; echo
   adminUser: "saucelabs-admin"
   adminPassword: ""
-
-  keepOriginalDatasources: false
+  auth:
+    anonymous:
+      enabled: "false"
   service:
     type: NodePort
   ingress:
@@ -45,14 +39,5 @@ grafana:
     annotations:
       kubernetes.io/ingress.class: traefik
       kubernetes.io/tls-acme: "true"
-  dataSource:
-    prometheus-datasource.json: |-
-      {
-        "access": "proxy",
-        "basicAuth": false,
-        "name": "prometheus",
-        "type": "prometheus",
-        "url": "http://kube-prometheus:9090"
-      }
 exporter-kubelets:
   https: false
